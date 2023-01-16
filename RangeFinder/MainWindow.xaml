@@ -1,0 +1,20 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RangeFinder"
+        xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation" x:Class="RangeFinder.MainWindow"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+
+        <telerik:RadComboBox        Margin="10,10,460,402"
+        x:Name="ComPorts" 
+        EmptyText="Выбрать устройство..."
+        ItemsSource="{Binding}" 
+        DisplayMemberPath="FullName" 
+        SelectionChanged="OnPortChanged"  />
+
+    </Grid>
+</Window>
