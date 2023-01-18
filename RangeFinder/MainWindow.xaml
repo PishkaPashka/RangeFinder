@@ -6,15 +6,43 @@
         xmlns:local="clr-namespace:RangeFinder"
         xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation" x:Class="RangeFinder.MainWindow"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Title="MainWindow" Height="395" Width="565">
+    <Grid RenderTransformOrigin="0.129,-1.038" Margin="10,10,10,9">
 
-        <telerik:RadComboBox        Margin="10,10,460,402"
-        x:Name="ComPorts" 
-        EmptyText="Выбрать устройство..."
-        ItemsSource="{Binding}" 
-        DisplayMemberPath="FullName" 
-        SelectionChanged="OnPortChanged"  />
-
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="300" />
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel x:Name="___No_Name_" Margin="0,0,10,10">
+            <Button x:Name="TurnOnLaserButton" Content="Включить лазер"
+                Margin="10 10 10 5" Click="TurnOnLaserButton_Click"/>
+            <Button x:Name="TurnOffLaserButton" Content="Выключить лазер"
+                Margin="10 5 10 5" Click="TurnOffLaserButton_Click"/>
+            <Button x:Name="GetRangeButton" 
+                Content="Измерить расстояние" 
+                Click="GetRangeButton_Click"
+                Margin="10 5 10 5"/>
+            <StackPanel Height="38"
+                    Orientation="Horizontal" Width="276">
+                <Button x:Name="Resolution1Button" Content="Разрешение 1 мм" 
+                    Width="128"
+                    Margin="5" Click="Resolution1Button_Click"/>
+                <Button x:Name="Resolution01Button" Content="Разрешение 0.1 мм" 
+                    Width="128"
+                    Margin="5" Click="Resolution01Button_Click"/>
+            </StackPanel>
+            <TextBox x:Name="AnswerTextBox" TextWrapping="Wrap"
+                 Width="265"
+                 Height="197"
+                 Margin="10px"/>
+        </StackPanel>
+        <CheckBox x:Name="Pin1CheckBox" 
+                  Grid.Column="1" 
+                  Content="Pin1" 
+                  HorizontalAlignment="Center" 
+                  Margin="0,175,0,0" 
+                  VerticalAlignment="Top" 
+                  Checked="Pin1CheckBox_Checked"
+                  Unchecked="Pin1CheckBox_Checked" />
     </Grid>
 </Window>
